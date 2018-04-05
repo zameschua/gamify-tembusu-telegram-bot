@@ -1,0 +1,31 @@
+{
+  "name": "gamify-tembusu-telegram-bot",
+  "version": "0.0.1",
+  "description": "A telegram bot for Tembusu College's Gaming Life module (UTC2113)",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "nodemon index.js --exec babel-node --presets babel-preset-env"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zameschua/gamify-tembusu-telegram-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zameschua/gamify-tembusu-telegram-bot/issues"
+  },
+  "homepage": "https://github.com/zameschua/gamify-tembusu-telegram-bot#readme",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "node-telegram-bot-api": "^0.30.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "nodemon": "^1.17.3",
+    "rimraf": "^2.6.2"
+  }
+}
