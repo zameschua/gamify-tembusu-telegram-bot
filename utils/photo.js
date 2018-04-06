@@ -5,7 +5,8 @@ import QRCode from "qrcode-reader";
 export function extractPhoto(bot, msg) {
   // Just take any photo size
   const photoSizes = msg.photo;
-  const photoSize = photoSizes[0];
+    console.log(photoSizes);
+  const photoSize = photoSizes[photoSizes.length - 1];
   const photoFileID = photoSize.file_id;
   // Get the file and download it
   return bot.getFile(photoFileID).then(file => {
