@@ -32,6 +32,16 @@ bot.onText(/\/start/, msg => {
   );
 });
 
+bot.onText(/\/leaderboard/, msg => {
+  const userId = msg.from.id;
+  const topScorers = persons.getTopScorers(5);
+  let resMsg = "*Leaderboard:*\n";
+  topScorers.forEach(person => {
+    resMsg = resMsg + `${person.getName()}: ${person.getPoints()} points\n`;
+  });
+  bot.sendMessage(userId, resMsg, { parse_mode: "Markdown" });
+});
+
 bot.on("photo", msg => {
   const userId = msg.from.id;
   const person = persons.getPersonById(userId);
