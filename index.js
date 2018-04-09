@@ -27,8 +27,8 @@ bot.onText(/\/start/, msg => {
   bot.sendMessage(
     userId,
     `
-        Hi ${name}! Welcome to Gamify Tembusu. Scan QR codes around campus to accumulate points!
-        `
+    Hi ${name}! Welcome to Gamify Tembusu. Scan QR codes around campus to accumulate points!
+    `
   );
 });
 
@@ -39,6 +39,13 @@ bot.onText(/\/leaderboard/, msg => {
   topScorers.forEach(person => {
     resMsg = resMsg + `${person.getName()}: ${person.getPoints()} points\n`;
   });
+  bot.sendMessage(userId, resMsg, { parse_mode: "Markdown" });
+});
+
+bot.onText(/\/points/, msg => {
+  const userId = msg.from.id;
+  const points = persons.getPersonById(userId).getPoints();
+  let resMsg = `You have ${points} points!`;
   bot.sendMessage(userId, resMsg, { parse_mode: "Markdown" });
 });
 
